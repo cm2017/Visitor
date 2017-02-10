@@ -88,8 +88,8 @@ class Visitor implements Countable
         }
     }
 
-    public function log()
-    {
+    public function log($page = null)
+    {                
         $ip = $this->ip->get();
 
         if (!$this->ip->isValid($ip)) {
@@ -109,6 +109,7 @@ class Visitor implements Countable
                 'ip'         => $ip,
                 'country'    => $country,
                 'clicks'     => 1,
+                'page'       => $page,
                 'updated_at' => c::now(),
                 'created_at' => c::now(),
             ];
