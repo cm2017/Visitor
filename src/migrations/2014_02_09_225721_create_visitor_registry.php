@@ -16,6 +16,7 @@
                 $table->increments('id');
                 $table->string('ip', 32);
                 $table->string('country', 4)->nullable();
+                $table->string('page', 240)->nullable();
                 $table->integer('clicks')->unsigned()->default(0);
                 $table->timestamps();
             });
